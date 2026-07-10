@@ -14,8 +14,7 @@
       • <b>Exploratory Data Analysis (EDA):</b> Extracting structural patterns from high-dimensional clinical datasets using data-driven, open-science methodologies.
     </td>
     <td width="40%" align="center" valign="top">
-      <!-- ЗАМЕНИТЕ ИМЯ ФАЙЛА НИЖЕ, ЕСЛИ ОНО ДРУГОЕ -->
-      <img src="1000036083.png" width="100%" style="border-radius: 8px; border: 1px solid #333333;" alt="BALLADEER: Impulsivity by Subtype" />
+      <img src="plot1.png" width="100%" style="border-radius: 8px; border: 1px solid #333333;" alt="BALLADEER: Impulsivity by Subtype" />
     </td>
   </tr>
 </table>
@@ -27,12 +26,11 @@
 <table>
   <tr>
     <td width="40%" align="center" valign="top">
-      <!-- ЗАМЕНИТЕ ИМЯ ФАЙЛА НИЖЕ, ЕСЛИ ОНО ДРУГОЕ -->
-      <img src="1000036082.png" width="100%" style="border-radius: 8px; border: 1px solid #333333;" alt="BALLADEER: True Accuracy by Subtype" />
+      <img src="plot2.png" width="100%" style="border-radius: 8px; border: 1px solid #333333;" alt="BALLADEER: True Accuracy by Subtype" />
     </td>
     <td width="60%" valign="top">
       #### ▣ Quantitative Modeling Trajectories
-      Complementing the impulsivity analysis (pictured above-right), I examine test performance accuracy. This second plot from the BALLADEER dataset maps performance accuracy by computational sub-clusters. It demonstrates that the identified subtypes display markedly different speed-accuracy trade-offs, which may indicate separate underlying neural mechanisms.<br><br>
+      Complementing the impulsivity analysis (pictured above-left), I examine test performance accuracy. This second plot from the BALLADEER dataset maps performance accuracy by computational sub-clusters. It demonstrates that the identified subtypes display markedly different speed-accuracy trade-offs, which may indicate separate underlying neural mechanisms.<br><br>
       A key part of my modeling strategy involves developing reproducible statistical pipelines for open-access data. For time-based trajectory analysis of task commissions, my mixed-effects modeling formula is structured as follows:
 
       $$Commission_{ij} = \beta_0 + \beta_1(Block_{ij}) + \beta_2(Cluster_{i}) + b_i + \epsilon_{ij}$$
@@ -75,4 +73,3 @@
 ### ◈ Contact & Collaboration
 **Email:** [d1d2dopamine@gmail.com](mailto:d1d2dopamine@gmail.com)  
 **Status:** Actively expanding my research portfolio. Open to academic discussions, methodological critiques, and collaborations on open-science projects.
-
