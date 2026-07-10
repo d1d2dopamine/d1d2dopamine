@@ -9,12 +9,12 @@
     <td width="60%" valign="top">
       <h3>◈ Academic Profile & Research Interests</h3>
       This GitHub profile serves as a living portfolio documenting my academic trajectory and research contributions. I am a neuroscientist specialized in the computational analysis of behavioral heterogeneity, with a particular emphasis on neurodevelopmental conditions like ADHD. My goals are to bridge theoretical neurobiological hypotheses with rigorous data-driven validation.<br><br>
-      My current research efforts focus on:
-      * **Computational Psychiatry & Behavioral Trajectories:** Modeling task-performance decay and impulsivity trajectories (such as the "Decompensated Sprint") over time to identify robust cognitive phenotypes.
-      * **Exploratory Data Analysis (EDA):** Extracting structural patterns from high-dimensional clinical datasets using data-driven, open-science methodologies.
+      My current research efforts focus on:<br>
+      • <b>Computational Psychiatry & Behavioral Trajectories:</b> Modeling task-performance decay and impulsivity trajectories (such as the "Decompensated Sprint") over time to identify robust cognitive phenotypes.<br>
+      • <b>Exploratory Data Analysis (EDA):</b> Extracting structural patterns from high-dimensional clinical datasets using data-driven, open-science methodologies.
     </td>
     <td width="40%" align="center" valign="top">
-      <!-- Feature Plot 1: BALLADEER Percent Commissions -->
+      <!-- ЗАМЕНИТЕ ИМЯ ФАЙЛА НИЖЕ, ЕСЛИ ОНО ДРУГОЕ -->
       <img src="1000036083.png" width="100%" style="border-radius: 8px; border: 1px solid #333333;" alt="BALLADEER: Impulsivity by Subtype" />
     </td>
   </tr>
@@ -27,7 +27,7 @@
 <table>
   <tr>
     <td width="40%" align="center" valign="top">
-      <!-- Feature Plot 2: BALLADEER True Accuracy -->
+      <!-- ЗАМЕНИТЕ ИМЯ ФАЙЛА НИЖЕ, ЕСЛИ ОНО ДРУГОЕ -->
       <img src="1000036082.png" width="100%" style="border-radius: 8px; border: 1px solid #333333;" alt="BALLADEER: True Accuracy by Subtype" />
     </td>
     <td width="60%" valign="top">
@@ -40,16 +40,17 @@
   </tr>
 </table>
 
+---
+
 ### ◈ Featured Repository & Statistical Stack
 
 <table>
   <tr>
     <td width="60%" valign="top">
-      An exploratory analysis testing impulsivity heterogeneity on continuous-performance tasks using independent datasets (HYPERAKTIV, BALLADEER).
-
-      * **Methodology:** K-means clustering, Mann-Whitney U tests, mixed-effects models.
-      * **Focus:** Euclidean distance anchoring, addressing methodological circularity, and exploring potential resilience mechanisms (green clusters).
-      * **Repository:** [View Analysis & Data](https://github.com/d1d2dopamine/the-Allosteric-Sprint-hypothesis)
+      An exploratory analysis testing impulsivity heterogeneity on continuous-performance tasks using independent datasets (HYPERAKTIV, BALLADEER).<br><br>
+      • <b>Methodology:</b> K-means clustering, Mann-Whitney U tests, mixed-effects models.<br>
+      • <b>Focus:</b> Euclidean distance anchoring, addressing methodological circularity, and exploring potential resilience mechanisms (green clusters).<br>
+      • <b>Repository:</b> <a href="https://github.com/d1d2dopamine/the-Allosteric-Sprint-hypothesis">View Analysis & Data</a>
     </td>
     <td width="40%" align="center" valign="top">
       <a href="https://github.com/d1d2dopamine/the-Allosteric-Sprint-hypothesis">
@@ -58,6 +59,8 @@
     </td>
   </tr>
 </table>
+
+<br>
 
 <p align="left">
   <img src="https://img.shields.io/badge/Python-333333?style=for-the-badge&logo=python&logoColor=white" />
@@ -70,6 +73,6 @@
 ---
 
 ### ◈ Contact & Collaboration
-**Email:** [d1d2dopamine@gmail.com](mailto:d1d2dopamine@gmail.com)
+**Email:** [d1d2dopamine@gmail.com](mailto:d1d2dopamine@gmail.com)  
 **Status:** Actively expanding my research portfolio. Open to academic discussions, methodological critiques, and collaborations on open-science projects.
 
