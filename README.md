@@ -10,24 +10,33 @@
 
 ---
 
-> Most of what's here replicates something already known in the ADHD literature. The one thing I can genuinely offer is a clean, honest account of what didn't hold up — including my own early mistakes.
+> I built a hypothesis I was sure was going to be big. Most of it wasn't. This is the honest version — what held up, what didn't, and why I'm posting the failures too.
 
 ### About
 
-I'm an independent, self-taught researcher exploring how ADHD presents differently across individuals, using open datasets and reproducible code. I am not a professional neuroscientist or academic — this is unaffiliated, independent work, shared openly for scrutiny and reuse.
+Independent, self-taught. No lab, no institution, no degree — just open datasets, reproducible code, and a habit of trying to break my own results before someone else does.
 
-My interest: whether impulsivity on attention tasks differs consistently between subgroups of people with ADHD — tested against real data rather than assumed.
+The question: does impulsivity on attention tasks differ *consistently* between subgroups of people with ADHD — not assumed, tested.
 
-### Findings so far (short version — full detail in the repo)
-
-- A subgroup of ADHD participants shows significantly higher commission-error rates than clean, non-ADHD controls — significant in one open dataset after correction, a consistent but non-significant trend in a second.
-- A hypothesized difference in *how that impulsivity changes over the course of a task* was tested directly with a mixed model and was **not supported** (p = 0.847). Reporting that openly rather than leaving it out.
-- No mechanism — dopaminergic, physiological, or otherwise — has been tested or confirmed. "Subtypes" below describes a statistical clustering result, not a validated biological category.
+### Scorecard
 
 <p align="center">
-  <img src="balladeer_impulsivity_by_subtype.png" width="440" alt="Impulsivity by subtype, BALLADEER dataset">
-  <img src="balladeer_accuracy_by_subtype.png" width="440" alt="Accuracy by subtype, BALLADEER dataset">
+  <img src="https://img.shields.io/badge/BALLADEER%20impulsivity-p%3D0.011%20✓-brightgreen" alt="balladeer significant">
+  <img src="https://img.shields.io/badge/HYPERAKTIV%20trend-p%3D0.031%2C%20ns-yellow" alt="hyperaktiv trend">
+  <img src="https://img.shields.io/badge/temporal%20dynamics-not%20supported-red" alt="temporal dynamics not supported">
+  <img src="https://img.shields.io/badge/mechanism-untested-lightgrey" alt="mechanism untested">
 </p>
+
+- **Held up:** a subgroup of ADHD participants shows significantly higher commission-error rates than clean, non-ADHD controls — significant in BALLADEER after correction, a consistent but non-significant trend in HYPERAKTIV.
+- **Didn't hold up:** the idea that this splits into two subtypes with *different trajectories over a task* (steady-but-impulsive vs. progressive fatigue). Tested directly with a mixed model — flat, p = 0.847. Posted here instead of quietly dropped.
+- **Never claimed:** any dopaminergic or physiological mechanism. Untested is untested, not "probably true."
+
+<table>
+<tr>
+<td width="50%"><img src="balladeer_impulsivity_by_subtype.png" alt="Impulsivity by subtype, BALLADEER dataset" width="100%"></td>
+<td width="50%"><img src="balladeer_accuracy_by_subtype.png" alt="Accuracy by subtype, BALLADEER dataset" width="100%"></td>
+</tr>
+</table>
 
 <p align="center"><sub>Descriptive plots of the clustering used — not evidence of separate neural mechanisms, since mechanism was never measured.</sub></p>
 
@@ -39,11 +48,11 @@ My interest: whether impulsivity on attention tasks differs consistently between
 
 ### Methods
 
-Nearest-anchor clustering (z-scaled Euclidean distance), Mann-Whitney U with Bonferroni correction, label-permutation testing, and mixed-effects modeling (`commission ~ block × cluster`) for within-task dynamics. Known limitations — partial circularity between clustering variables and tested outcomes, small subgroup sizes, no third independent replication yet — are documented in full in the repo.
+Nearest-anchor clustering (z-scaled Euclidean distance), Mann-Whitney U with Bonferroni correction, label-permutation testing, mixed-effects modeling (`commission ~ block × cluster`) for within-task dynamics. Full limitations — partial circularity between clustering variables and tested outcomes, small subgroup sizes, no third independent replication yet — documented in the repo, not buried in a footnote.
 
 ### Repository
 
-**[the-Allosteric-Sprint-hypothesis](https://github.com/d1d2dopamine/the-Allosteric-Sprint-hypothesis)** — full analysis, code, results (including what didn't work), and a complete log of the methodological corrections made along the way.
+**[the-Allosteric-Sprint-hypothesis](https://github.com/d1d2dopamine/the-Allosteric-Sprint-hypothesis)** — full analysis, code, results including what didn't work, and a complete log of every correction made along the way.
 
 `Python` · `pandas` · `NumPy` · `SciPy` · `statsmodels` · `matplotlib`
 
