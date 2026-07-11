@@ -3,7 +3,6 @@
     <style>
       .name { font: 700 26px 'Segoe UI', Helvetica, Arial, sans-serif; fill: #E6EDF3; }
       .subtitle { font: 400 13px 'SFMono-Regular', Consolas, Menlo, monospace; fill: rgba(255,255,255,0.55); }
-      .live { font: 400 12px 'SFMono-Regular', Consolas, Menlo, monospace; fill: rgba(255,255,255,0.65); }
       .bio { font: 400 14.5px 'Segoe UI', Helvetica, Arial, sans-serif; fill: rgba(255,255,255,0.78); }
       .label { font: 600 11px 'SFMono-Regular', Consolas, Menlo, monospace; fill: rgba(255,255,255,0.45); letter-spacing: 1px; }
       .value { font: 700 23px 'SFMono-Regular', Consolas, Menlo, monospace; fill: #5E9FE8; }
@@ -15,9 +14,6 @@
 
   <text x="32" y="52" class="name">d1d2dopamine</text>
   <text x="32" y="76" class="subtitle">independent researcher &#183; computational behavior</text>
-
-  <circle cx="744" cy="48" r="4" fill="#72BC8F" />
-  <text x="756" y="52" class="live">building in public</text>
 
   <line x1="32" y1="96" x2="848" y2="96" stroke="rgba(255,255,255,0.12)" />
 
