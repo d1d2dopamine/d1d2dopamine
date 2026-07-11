@@ -1,0 +1,46 @@
+<svg width="880" height="320" viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .name { font: 700 26px 'Segoe UI', Helvetica, Arial, sans-serif; fill: #E6EDF3; }
+      .subtitle { font: 400 13px 'SFMono-Regular', Consolas, Menlo, monospace; fill: rgba(255,255,255,0.55); }
+      .live { font: 400 12px 'SFMono-Regular', Consolas, Menlo, monospace; fill: rgba(255,255,255,0.65); }
+      .bio { font: 400 14.5px 'Segoe UI', Helvetica, Arial, sans-serif; fill: rgba(255,255,255,0.78); }
+      .label { font: 600 11px 'SFMono-Regular', Consolas, Menlo, monospace; fill: rgba(255,255,255,0.45); letter-spacing: 1px; }
+      .value { font: 700 23px 'SFMono-Regular', Consolas, Menlo, monospace; fill: #5E9FE8; }
+      .footer { font: 400 10.5px 'SFMono-Regular', Consolas, Menlo, monospace; fill: rgba(255,255,255,0.4); }
+    </style>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="879" height="319" rx="14" fill="#0D1117" stroke="rgba(255,255,255,0.12)" />
+
+  <text x="32" y="52" class="name">d1d2dopamine</text>
+  <text x="32" y="76" class="subtitle">independent researcher &#183; computational behavior</text>
+
+  <circle cx="744" cy="48" r="4" fill="#72BC8F" />
+  <text x="756" y="52" class="live">building in public</text>
+
+  <line x1="32" y1="96" x2="848" y2="96" stroke="rgba(255,255,255,0.12)" />
+
+  <text x="32" y="126" class="bio">No lab, no institution, no degree &#8212; self-taught, working from open</text>
+  <text x="32" y="150" class="bio">datasets. I publish whatever's left standing, including what isn't.</text>
+
+  <line x1="32" y1="178" x2="848" y2="178" stroke="rgba(255,255,255,0.12)" />
+
+  <line x1="234" y1="196" x2="234" y2="254" stroke="rgba(255,255,255,0.10)" />
+  <line x1="438" y1="196" x2="438" y2="254" stroke="rgba(255,255,255,0.10)" />
+  <line x1="642" y1="196" x2="642" y2="254" stroke="rgba(255,255,255,0.10)" />
+
+  <text x="32" y="204" class="label">PUBLIC REPOS</text>
+  <text x="32" y="236" class="value">2</text>
+
+  <text x="254" y="204" class="label">FOLLOWERS</text>
+  <text x="254" y="236" class="value">4</text>
+
+  <text x="458" y="204" class="label">LONGEST STREAK</text>
+  <text x="458" y="236" class="value">11d</text>
+
+  <text x="662" y="204" class="label">LAST COMMIT</text>
+  <text x="662" y="236" class="value">2026-07-10</text>
+
+  <text x="32" y="296" class="footer">generated automatically &#183; updated 2026-07-11</text>
+</svg>
