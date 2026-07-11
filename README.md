@@ -15,14 +15,11 @@
 
 <div align="center">
 
-![profile card](assets/card.svg)
+<!-- STATS:START -->
+![public repos](https://img.shields.io/badge/public_repos-2-3a3a3a?style=flat-square) ![followers](https://img.shields.io/badge/followers-4-3a3a3a?style=flat-square) ![longest streak](https://img.shields.io/badge/longest_streak-11d-3a3a3a?style=flat-square) ![last commit](https://img.shields.io/badge/last_commit-2026--07--10-3a3a3a?style=flat-square)
+<!-- STATS:END -->
 
 </div>
-
-The panel above is not a static image — it's regenerated daily by a small
-Python script running on a schedule via GitHub Actions
-(see `generate_card.py` and `.github/workflows/update-card.yml`), pulling
-real public repo/follower/streak data through the GitHub API.
 
 ### About
 
