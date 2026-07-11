@@ -34,13 +34,13 @@
   <text x="32" y="236" class="value">2</text>
 
   <text x="254" y="204" class="label">FOLLOWERS</text>
-  <text x="254" y="236" class="value">4</text>
+  <text x="254" y="236" class="value">0</text>
 
   <text x="458" y="204" class="label">LONGEST STREAK</text>
-  <text x="458" y="236" class="value">11d</text>
+  <text x="458" y="236" class="value">2d</text>
 
   <text x="662" y="204" class="label">LAST COMMIT</text>
-  <text x="662" y="236" class="value">2026-07-10</text>
+  <text x="662" y="236" class="value">2026-07-11</text>
 
   <text x="32" y="296" class="footer">generated automatically &#183; updated 2026-07-11</text>
 </svg>
