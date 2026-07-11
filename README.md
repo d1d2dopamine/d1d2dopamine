@@ -1,4 +1,6 @@
-<h1 align="center">d1d2dopamine</h1>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:4c1d95&height=200&section=header&text=d1d2dopamine&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=40" alt="banner">
+</p>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1200&color=F7A828&center=true&vCenter=true&width=600&lines=Independent+researcher;No+lab%2C+no+degree%2C+just+open+data;Reporting+null+results+since+2026" alt="typing animation">
