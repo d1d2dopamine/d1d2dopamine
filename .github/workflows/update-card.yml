@@ -22,16 +22,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate card.svg
+      - name: Update stats badges in README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USERNAME: d1d2dopamine
-        run: python3 generate_card.py --out assets/card.svg
+        run: python3 generate_card.py --readme README.md
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/card.svg
-          git diff --staged --quiet || git commit -m "chore: refresh profile card [skip ci]"
+          git add README.md
+          git diff --staged --quiet || git commit -m "chore: refresh profile stats [skip ci]"
           git push
