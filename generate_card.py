@@ -125,7 +125,7 @@ SVG_TEMPLATE = """<svg width="880" height="320" viewBox="0 0 880 320" xmlns="htt
     </style>
   </defs>
 
-  <rect x="0.5" y="0.5" width="879" height="319" rx="14" fill="#0D1117" stroke="rgba(255,255,255,0.12)" />
+  <rect x="0.5" y="0.5" width="879" height="319" rx="0" fill="#0D1117" stroke="rgba(255,255,255,0.16)" />
 
   <text x="32" y="52" class="name">__USERNAME__</text>
   <text x="32" y="76" class="subtitle">independent researcher &#183; computational behavior</text>
@@ -196,4 +196,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
+    
