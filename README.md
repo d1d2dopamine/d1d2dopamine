@@ -1,11 +1,15 @@
 <h1 align="center">d1d2dopamine</h1>
-<p align="center"><i>Independent researcher — computational analysis of behavioral heterogeneity in ADHD</i></p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1200&color=F7A828&center=true&vCenter=true&width=600&lines=Independent+researcher;No+lab%2C+no+degree%2C+just+open+data;Reporting+null+results+since+2026" alt="typing animation">
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-exploratory-orange" alt="status">
   <img src="https://img.shields.io/badge/institution-none-lightgrey" alt="no institution">
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="license">
   <img src="https://img.shields.io/badge/python-3.x-blue" alt="python">
+  <img src="https://komarev.com/ghpvc/?username=d1d2dopamine&color=blueviolet&style=flat" alt="profile views">
 </p>
 
 ---
