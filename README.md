@@ -16,7 +16,7 @@
 <div align="center">
 
 <!-- STATS:START -->
-![public repos](https://img.shields.io/badge/public_repos-4-3a3a3a?style=flat-square) ![followers](https://img.shields.io/badge/followers-0-3a3a3a?style=flat-square) ![longest streak](https://img.shields.io/badge/longest_streak-4d-3a3a3a?style=flat-square) ![last commit](https://img.shields.io/badge/last_commit-2026--07--22-3a3a3a?style=flat-square)
+![public repos](https://img.shields.io/badge/public_repos-4-3a3a3a?style=flat-square) ![followers](https://img.shields.io/badge/followers-0-3a3a3a?style=flat-square) ![longest streak](https://img.shields.io/badge/longest_streak-4d-3a3a3a?style=flat-square) ![last commit](https://img.shields.io/badge/last_commit-2026--07--23-3a3a3a?style=flat-square)
 <!-- STATS:END -->
 
 </div>
