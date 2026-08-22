@@ -13,7 +13,7 @@ not tested yet.
 
 | Project | What it does | Stack, license |
 | --- | --- | --- |
-| [ikna](https://github.com/d1d2dopamine/ikna) | Learns phrases in context and decides how much new material a day can carry | Kotlin, GPL-3.0 |
+| [ikna](https://github.com/d1d2dopamine/ikna) | Learns phrases in context, brings your Anki decks over and decides how much new material a day can carry | Kotlin, GPL-3.0 |
 | [vespian](https://github.com/d1d2dopamine/vespian) | Predicts when you will fall asleep, not when you should | Kotlin, GPL-3.0 |
 | [allostatic-sprint-hypothesis](https://github.com/d1d2dopamine/allostatic-sprint-hypothesis) | Tests one ADHD hypothesis on four public datasets, nulls included | Python, MIT |
 | [Gitctap](https://github.com/d1d2dopamine/Gitctap) | Creates, pushes and compares one project across several Git forges | Python, MIT |
@@ -22,17 +22,26 @@ not tested yet.
 
 Spaced repetition where the scheduler is allowed to say no.
 
+- Your Anki decks come over: any `.apkg`, old export or current one, read on
+  the phone itself. Each deck's language is worked out rather than asked for,
+  cloze gaps and phrases inside sentences survive the crossing, and your answer
+  history is replayed through the scheduler instead of being trusted as stored
+  state. A card that cannot be rebuilt faithfully is refused and counted, never
+  stored mangled.
 - A load governor forecasts today's review cost from backlog, recent accuracy
   and missed days. It can refuse new material without cancelling the session,
   and the day's plan may only shrink.
 - Answers are swipes: direction, distance and speed map to four grades, judged
   against a rolling window of your own previous answers.
-- FSRS-4.5 runs separately per level (recognition, cloze, production) over a
-  second, word-level memory layer. 20% same-day amnesty, no streaks, no visible
-  backlog counter.
-- No internet permission in the manifest. Reviews are an append-only log
-  exported to `Documents/ikna/`; a restore replays every answer through the
-  scheduler instead of trusting stored state.
+- FSRS-6, all 21 weights, running separately per level (recognition, cloze,
+  production) over a second, word-level memory layer. 20% same-day amnesty, no
+  streaks, no visible backlog counter. The optimiser that fits those weights to
+  your own log runs on the device, as an estimator only.
+- Nothing about your learning leaves the phone. The only network feature is the
+  update and catalogue check; switched off in Settings it opens no socket at
+  all, and an import from Anki never touches the network. Reviews are an
+  append-only log exported to `Documents/ikna/`; a restore replays every answer
+  through the scheduler instead of trusting stored state.
 - Android 10+. The signing key is committed deliberately so anyone can rebuild
   a comparable APK; `docs/KEYSTORE.md` explains that trade-off.
 
