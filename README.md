@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./banner2.jpeg" alt="Profile banner" width="100%">
+</p>
+
 # d1d2dopamine
 
 I build software and run data analysis on attention, impulsivity and sleep:
