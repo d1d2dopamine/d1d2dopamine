@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./banner2.jpeg" alt="Profile banner" width="100%">
+  <img src="./banner1.jpeg" alt="Profile banner" width="100%">
 </p>
 
 # d1d2dopamine
