@@ -1,8 +1,9 @@
 # d1d2dopamine
 
 I build software and run data analysis on attention, impulsivity and sleep:
-two Android apps, one open-data study, one Git command-line tool. Kotlin and
-Python. Both apps work without a network, and each repository states what is
+two Android apps, one open-data study, one Windows desktop analysis app, one
+Android design system and one Git command-line tool. Kotlin, C# and Python. The
+apps work without required network access, and each repository states what is
 not tested yet.
 
 [Project notes](https://d1d2dopamine.github.io/) ·
@@ -16,7 +17,9 @@ not tested yet.
 | [ikna](https://github.com/d1d2dopamine/ikna) | Learns phrases in context, brings your Anki decks over and decides how much new material a day can carry | Kotlin, GPL-3.0 |
 | [vespian](https://github.com/d1d2dopamine/vespian) | Predicts when you will fall asleep, not when you should | Kotlin, GPL-3.0 |
 | [allostatic-sprint-hypothesis](https://github.com/d1d2dopamine/allostatic-sprint-hypothesis) | Tests one ADHD hypothesis on four public datasets, nulls included | Python, MIT |
+| [MVS Analyzer](https://github.com/d1d2dopamine/MVS-analyzer) | Ranks ten metrics on your data by false alarms, power, robustness, repeatability and coverage before the real group comparison | C# / .NET 8, MIT |
 | [Gitctap](https://github.com/d1d2dopamine/Gitctap) | Creates, pushes and compares one project across several Git forges | Python, MIT |
+| [trial3lib](https://github.com/d1d2dopamine/trial3lib) | A non-Material Compose design system for rectangular, high-contrast Android interfaces | Kotlin / Jetpack Compose |
 
 ### ikna
 
@@ -85,6 +88,27 @@ reaction time rather than its average.
 - AI-assisted development is disclosed in the repository. Not a diagnostic
   tool.
 
+### MVS Analyzer
+
+A Windows desktop app for choosing a summary metric before an analysis, or
+checking that a conclusion does not depend on one lucky metric.
+
+- Ten metrics over 2–10 independent groups. Calibration replays the actual rows
+  in a null world and a planted-effect world, then measures false-alarm rate,
+  power, robustness, split-half repeatability and interval coverage.
+- The run uses Mann–Whitney *U* for two groups or Kruskal–Wallis *H* for three to
+  ten, with Cliff's delta, a bootstrap interval, equivalence testing and MDE.
+  Verdicts include difference, no difference, not enough data and not applicable.
+- The MVS Score combines five measured components in a frozen, hashed formula.
+  The candidate set is allowed to be empty when no metric clears the gates.
+- Each run hashes its input and outputs in `run_manifest.json` and enters a
+  hash-chained local journal. Audit checks modified, missing and hidden runs,
+  formula changes, engine differences and unstable candidate sets offline.
+- Pure .NET 8 and WinForms, zero NuGet dependencies, no accounts, telemetry or
+  networking code. Windows 10+ x64. MIT.
+- Independent groups only for now: paired and repeated-measures designs and
+  Kruskal–Wallis post-hoc comparisons are listed as limitations.
+
 ### Gitctap
 
 - `setup`, `create --on`, `push`, `status`, `check` across GitHub, Codeberg,
@@ -100,6 +124,23 @@ reaction time rather than its average.
 - One file, standard library only, Python 3.8+, 30 offline tests that use bare
   repositories as stand-in forges.
 
+### trial3lib
+
+A Compose design system for Android that deliberately does not use Material.
+
+- No elevation, ripple, rounded corners or tonal surfaces. One-pixel lines,
+  rectangular controls, geometry and contrast carry the interface instead.
+- Twelve hand-authored palettes each ship in dark and light versions. Contrast
+  tests cover both, including pure black OLED and paper-white conditions.
+- The library depends on `compose.foundation` and nothing else. Material 3 is
+  not a dependency, and a test asserts that its classes are not loadable.
+- Tokens cover colour, fifteen typography slots, spacing, strokes, opacity and
+  motion; reduced-motion behaviour follows the system setting.
+- `dev.trial3lib.ui.compat` mirrors Material call signatures so an existing app
+  can migrate by changing imports while the compatibility surface is counted.
+- The reviewed public API contains 245 declarations. Design, test-signature and
+  API-snapshot checks run without an Android SDK.
+
 ## How I work
 
 - Null and inconclusive results stay in the repository next to the positive
@@ -108,13 +149,6 @@ reaction time rather than its average.
   alongside the analysis.
 - Local by default. Network access is an explicit feature, not a default.
 - Untested areas and known gaps are written down in the docs.
-
-## Also here
-
-[rt-variability-benchmark](https://github.com/d1d2dopamine/rt-variability-benchmark)
-compares reaction-time variability metrics under outliers, missing responses
-and unequal trial counts. It is early-stage supporting work for the dispersion
-endpoints above.
 
 Repository documentation is written in English and Russian. The apps are not
 medical devices and the analyses are not diagnostic tools.
