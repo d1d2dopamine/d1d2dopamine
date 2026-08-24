@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./banner5.jpeg" alt="Profile banner" width="100%">
+  <img src="./banner2.jpeg" alt="Profile banner" width="100%">
 </p>
 
 # d1d2dopamine
@@ -156,3 +156,7 @@ A Compose design system for Android that deliberately does not use Material.
 
 Repository documentation is written in English and Russian. The apps are not
 medical devices and the analyses are not diagnostic tools.
+
+<p align="center">
+  <img src="./banner7.png" alt="Travis points upward" width="100%">
+</p>
