@@ -13,7 +13,7 @@ Most of the code in these repositories is written with AI models. My part is usu
 [@d1d2dopamine on X](https://x.com/d1d2dopamine)
 
 <!-- STATS:START -->
-<!-- updated automatically by GitHub Actions -->
+![public repos](https://img.shields.io/badge/public_repos-11-3a3a3a?style=flat-square) ![followers](https://img.shields.io/badge/followers-2-3a3a3a?style=flat-square) ![longest streak](https://img.shields.io/badge/longest_streak-18d-3a3a3a?style=flat-square) ![last commit](https://img.shields.io/badge/last_commit-2026--09--21-3a3a3a?style=flat-square)
 <!-- STATS:END -->
 
 ## Projects
