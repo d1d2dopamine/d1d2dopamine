@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./bannerforreadme.png" alt="Profile banner" width="100%">
+  <img src="./github_profile_banner_full.webp" alt="Profile banner" width="100%">
 </p>
 
 # d1d2dopamine
