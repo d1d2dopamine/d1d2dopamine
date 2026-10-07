@@ -16,6 +16,7 @@ Usage:
     GITHUB_TOKEN=... GH_USERNAME=... python3 generate_card.py   # live, in Actions
 """
 import argparse
+from datetime import datetime, time, timedelta, timezone
 import json
 import os
 import sys
@@ -70,15 +71,20 @@ def longest_streak(days):
     return longest
 
 
-def fetch_live_stats(username, token):
+def fetch_live_stats(username, token, now=None):
+    now = now or datetime.now(timezone.utc)
+    now = now.astimezone(timezone.utc)
+    first_day = now.date() - timedelta(days=364)
+    start = datetime.combine(first_day, time.min, tzinfo=timezone.utc)
     user = _get(API_ROOT + "/users/" + username, token)
-    repos = _get(API_ROOT + "/users/" + username + "/repos?sort=pushed&per_page=1", token)
-    last_commit = repos[0]["pushed_at"][:10] if repos else "n/a"
+    repos = _get(API_ROOT + "/users/" + username + "/repos?sort=pushed&direction=desc&per_page=1", token)
+    pushed_at = repos[0].get("pushed_at") if repos else None
+    last_push = pushed_at[:10] if pushed_at else "n/a"
 
     query = """
-    query($login: String!) {
+    query($login: String!, $from: DateTime!, $to: DateTime!) {
       user(login: $login) {
-        contributionsCollection {
+        contributionsCollection(from: $from, to: $to) {
           contributionCalendar {
             weeks { contributionDays { date contributionCount } }
           }
@@ -86,22 +92,33 @@ def fetch_live_stats(username, token):
       }
     }
     """
-    gql = _graphql(query, {"login": username}, token)
-    weeks = (
-        gql.get("data", {})
-        .get("user", {})
-        .get("contributionsCollection", {})
-        .get("contributionCalendar", {})
-        .get("weeks", [])
+    variables = {
+        "login": username,
+        "from": start.isoformat().replace("+00:00", "Z"),
+        "to": now.isoformat().replace("+00:00", "Z"),
+    }
+    gql = _graphql(query, variables, token)
+    if gql.get("errors"):
+        raise ValueError("GitHub GraphQL returned errors; existing stats were not changed.")
+    try:
+        weeks = gql["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+        days = [d for w in weeks for d in w["contributionDays"]]
+    except (KeyError, TypeError) as exc:
+        raise ValueError("GitHub returned an incomplete contribution calendar.") from exc
+    days = sorted(
+        (d for d in days if first_day.isoformat() <= d["date"] <= now.date().isoformat()),
+        key=lambda d: d["date"],
     )
-    days = [d for w in weeks for d in w["contributionDays"]]
+    expected_dates = [(first_day + timedelta(days=i)).isoformat() for i in range(365)]
+    if [d["date"] for d in days] != expected_dates:
+        raise ValueError("GitHub did not return the complete 365-day contribution window.")
     streak = longest_streak(days) if days else 0
 
     return {
         "PUBLIC_REPOS": user.get("public_repos", 0),
         "FOLLOWERS": user.get("followers", 0),
         "LONGEST_STREAK": streak,
-        "LAST_COMMIT": last_commit,
+        "LAST_PUSH": last_push,
     }
 
 
@@ -110,7 +127,7 @@ def sample_stats():
         "PUBLIC_REPOS": 2,
         "FOLLOWERS": 4,
         "LONGEST_STREAK": 11,
-        "LAST_COMMIT": "2026-07-10",
+        "LAST_PUSH": "2026-07-10",
     }
 
 
@@ -134,8 +151,8 @@ def build_badges_line(stats):
     fields = [
         ("public repos", str(stats["PUBLIC_REPOS"])),
         ("followers", str(stats["FOLLOWERS"])),
-        ("longest streak", str(stats["LONGEST_STREAK"]) + "d"),
-        ("last commit", str(stats["LAST_COMMIT"])),
+        ("longest streak (365d)", str(stats["LONGEST_STREAK"]) + "d"),
+        ("last push", str(stats["LAST_PUSH"])),
     ]
     parts = []
     for label, value in fields:
@@ -148,17 +165,20 @@ def update_readme(readme_path, stats):
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    if START_MARKER not in content or END_MARKER not in content:
-        print("Could not find STATS markers in " + readme_path + "; leaving file untouched.", file=sys.stderr)
-        return
+    if content.count(START_MARKER) != 1 or content.count(END_MARKER) != 1:
+        raise ValueError("README must contain exactly one pair of STATS markers.")
+    start_pos = content.index(START_MARKER)
+    end_pos = content.index(END_MARKER)
+    if end_pos < start_pos:
+        raise ValueError("STATS markers are in the wrong order.")
 
-    before = content.split(START_MARKER)[0]
-    after = content.split(END_MARKER)[1]
+    before = content[:start_pos]
+    after = content[end_pos + len(END_MARKER):]
     new_content = before + build_badges_line(stats) + after
 
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(new_content)
-    print("updated " + readme_path)
+    print("updated " + str(readme_path))
 
 
 def main():
