@@ -5,7 +5,7 @@
 I study neuroscience independently and build applications and research tools around questions that interest me. Much of my work involves learning, attention, sleep and the statistical analysis of repeated measurements.
 
 <!-- STATS:START -->
-![public repos](https://img.shields.io/badge/public_repos-10-3a3a3a?style=flat-square) ![followers](https://img.shields.io/badge/followers-4-3a3a3a?style=flat-square) ![longest streak (365d)](https://img.shields.io/badge/longest_streak_%28365d%29-18d-3a3a3a?style=flat-square) ![last push](https://img.shields.io/badge/last_push-2026--10--07-3a3a3a?style=flat-square)
+![public repos](https://img.shields.io/badge/public_repos-10-3a3a3a?style=flat-square) ![followers](https://img.shields.io/badge/followers-4-3a3a3a?style=flat-square) ![longest streak (365d)](https://img.shields.io/badge/longest_streak_%28365d%29-18d-3a3a3a?style=flat-square) ![last push](https://img.shields.io/badge/last_push-2026--10--09-3a3a3a?style=flat-square)
 <!-- STATS:END -->
 
 ## How I work
